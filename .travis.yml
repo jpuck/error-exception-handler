@@ -1,0 +1,10 @@
+language: php
+php:
+  - nightly
+  - 5.3.3
+install:
+  - composer config -g -- disable-tls true
+  - composer config -g -- secure-http false
+  - composer install --no-dev
+script:
+  - ./tests/lint.bash
