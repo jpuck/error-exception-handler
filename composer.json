@@ -1,0 +1,20 @@
+{
+    "name": "jpuck/error-exception-handler",
+    "description": "Convert errors to exceptions and handle them.",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Jeff Puckett",
+            "email": "jeff@jeffpuckett.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "*",
+        "swiftmailer/swiftmailer": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "jpuck\\Error\\": "src/"
+        }
+    }
+}
