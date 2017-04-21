@@ -10,7 +10,7 @@ use Swift_Message;
 
 class Handler
 {
-    protected static function getErrorType($type) {
+    public static function getErrorType($type) {
         // http://php.net/manual/en/errorfunc.constants.php#109430
         switch($type){
             case E_ERROR: // 1 //
@@ -48,7 +48,7 @@ class Handler
 
     public static function convertErrorsToExceptions() {
         set_error_handler(function($errno, $errstr, $errfile, $errline){
-            throw new Exception(static::getErrorType($errno).
+            throw new Exception(Handler::getErrorType($errno).
                 " line $errline in $errfile: $errstr\n", $errno
             );
         });
