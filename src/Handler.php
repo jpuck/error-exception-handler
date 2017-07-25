@@ -56,8 +56,8 @@ class Handler
 
     public static function swift()
     {
-        if ( file_exists(getcwd().'/.env') ) {
-            $dotenv = new Dotenv(getcwd());
+        if ($env = realpath(__DIR__.'/../../../../.env')) {
+            $dotenv = new Dotenv(dirname($env));
             $dotenv->load();
         }
 
