@@ -9,8 +9,8 @@
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "*",
-        "swiftmailer/swiftmailer": "*"
+        "vlucas/phpdotenv": "^2.0.1",
+        "swiftmailer/swiftmailer": "^5.4.8"
     },
     "autoload": {
         "psr-4": {
