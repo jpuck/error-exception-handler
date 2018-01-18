@@ -2,7 +2,7 @@
 
 namespace jpuck\Error;
 
-use Exception;
+use ErrorException;
 use Dotenv\Dotenv;
 use Swift_SmtpTransport;
 use Swift_Mailer;
@@ -47,9 +47,12 @@ class Handler
     }
 
     public static function convertErrorsToExceptions() {
-        set_error_handler(function($errno, $errstr, $errfile, $errline){
-            throw new Exception(Handler::getErrorType($errno).
-                " line $errline in $errfile: $errstr\n", $errno
+        set_error_handler(function($severity, $message, $file, $line){
+            throw new ErrorException(Handler::getErrorType($severity).": $message",
+                $severity,
+                $severity,
+                $file,
+                $line
             );
         });
     }
