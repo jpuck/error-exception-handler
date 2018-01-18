@@ -2,3 +2,4 @@
 /coverage/
 /nbproject/private/
 /phpunit.xml
+composer.lock
